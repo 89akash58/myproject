@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
@@ -10,7 +10,6 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false); // Track loading state
   const navigate = useNavigate();
 
-  // Handle the login submission
   const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true); // Start loading
@@ -39,7 +38,7 @@ function Login() {
 
         toast.success("Login successful!", {
           position: "top-center",
-          autoClose: 3000,
+          autoClose: 2000,
         });
         navigate("/home");
       } else {
@@ -116,6 +115,7 @@ function Login() {
 
   return (
     <>
+      <ToastContainer />
       <h1 style={{ textAlign: "center" }}>Demonstration</h1>
       <div className="auth-container">
         <h2>Login</h2>
@@ -151,6 +151,7 @@ function Login() {
           </span>
         </p>
       </div>
+      <ToastContainer />
     </>
   );
 }

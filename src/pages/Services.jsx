@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const Services = () => {
   const [oldPassword, setOldPassword] = useState("");
@@ -59,6 +59,7 @@ const Services = () => {
   return (
     <>
       <Navbar />
+      <ToastContainer />
       <div
         style={{
           display: "flex",
@@ -141,6 +142,7 @@ const Services = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

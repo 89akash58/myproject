@@ -65,6 +65,7 @@ function Signup() {
 
   return (
     <>
+      <ToastContainer />
       <h1 style={{ textAlign: "center" }}>Demostration </h1>
       <div className="auth-container">
         <h2>Signup</h2>

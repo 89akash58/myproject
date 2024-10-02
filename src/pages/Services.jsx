@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import { toast } from "react-toastify";
 
 const Services = () => {
   const [oldPassword, setOldPassword] = useState("");
@@ -37,11 +38,22 @@ const Services = () => {
 
       setSuccess(true);
       setTimeout(() => {
-        navigate("/login");
+        handleLogout();
       }, 2000);
     } catch (err) {
       setError(err.message);
     }
+  };
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+
+    toast.success("Logged out successfully", {
+      position: "top-center",
+      autoClose: 3000,
+    });
+
+    navigate("/login");
   };
 
   return (

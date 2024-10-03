@@ -3,7 +3,3 @@
   text-decoration: none;
   font-size: large;
 }
-.data {
-  display: grid;
-  grid-template-columns: auto auto;
-}
